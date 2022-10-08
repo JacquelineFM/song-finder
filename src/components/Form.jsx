@@ -1,10 +1,23 @@
 import { useState } from "react";
+import useLyrics from "../hooks/useLyrics";
 
 const Form = () => {
   const [search, setSearch] = useState({ artist: "", song: "" });
+  const { setAlert } = useLyrics();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (Object.values(search).includes("")) {
+      setAlert("All fields are required!");
+      return;
+    }
+
+    setAlert("");
+  };
 
   return (
-    <form className="w-full mx-auto space-y-10">
+    <form className="w-full mx-auto space-y-10" onSubmit={handleSubmit}>
       <div className="space-y-6">
         <div className="flex flex-col justify-between space-y-3">
           <label htmlFor="artist" className="text-gray-700 font-bold uppercase">

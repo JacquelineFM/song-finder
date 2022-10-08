@@ -1,6 +1,10 @@
 import Form from "./Form";
+import Alert from "./Alert";
+import useLyrics from "../hooks/useLyrics";
 
 const AppLyrics = () => {
+  const { alert } = useLyrics();
+
   return (
     <div className="w-full">
       <header className="bg-black w-full text-center mx-auto py-10 px-4 sm:px-6 lg:py-14 lg:px-8">
@@ -14,7 +18,9 @@ const AppLyrics = () => {
         <div className="bg-white rounded-lg shadow w-full mx-auto p-8 my-8 lg:my-12 border-t-4 border-emerald-500 h-fit">
           <Form />
         </div>
-        <main className="bg-white rounded-lg shadow w-full mx-auto p-8 my-8 md:col-span-2 lg:my-12 lg:col-span-2 border-t-4 border-emerald-500"></main>
+        <main className="bg-white rounded-lg shadow w-full mx-auto p-8 my-8 md:col-span-2 lg:my-12 lg:col-span-2 border-t-4 border-emerald-500 h-fit">
+          {alert && <Alert>{alert}</Alert>}
+        </main>
       </div>
     </div>
   );
