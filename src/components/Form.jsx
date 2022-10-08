@@ -4,7 +4,7 @@ const Form = () => {
   const [search, setSearch] = useState({ artist: "", song: "" });
 
   return (
-    <div className="w-full mx-auto space-y-10">
+    <form className="w-full mx-auto space-y-10">
       <div className="space-y-6">
         <div className="flex flex-col justify-between space-y-3">
           <label htmlFor="artist" className="text-gray-700 font-bold uppercase">
@@ -50,7 +50,7 @@ const Form = () => {
         value="Search"
         className="py-2 px-4 bg-emerald-500 hover:bg-emerald-600 focus:ring-emerald-400 focus:ring-offset-emerald-100 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer"
       />
-    </div>
+    </form>
   );
 };
 
