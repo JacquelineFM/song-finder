@@ -9,10 +9,10 @@ const Lyrics = () => {
   ) : (
     <>
       <div>
-        <p class="text-emerald-500 text-sm font-medium uppercase">
+        <p className="text-emerald-500 text-sm font-medium uppercase">
           {lyricsData.artist}
         </p>
-        <p class="text-gray-700 text-xl font-bold uppercase">
+        <p className="text-gray-700 text-xl font-bold uppercase">
           {lyricsData.song}
         </p>
       </div>

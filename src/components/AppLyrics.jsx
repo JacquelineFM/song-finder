@@ -22,12 +22,12 @@ const AppLyrics = () => {
           <Form />
         </div>
         <main className="bg-white rounded-lg shadow w-full mx-auto p-8 my-8 md:col-span-2 lg:my-12 lg:col-span-2 border-t-4 border-emerald-500 h-fit">
-          {alert ? (
+          {loading ? (
+            <Spinner />
+          ) : alert ? (
             <Alert>{alert}</Alert>
           ) : !Object.values(lyricsData).includes("") ? (
             <Lyrics />
-          ) : loading ? (
-            <Spinner />
           ) : (
             <Info />
           )}

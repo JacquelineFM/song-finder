@@ -27,9 +27,14 @@ const LyricsProvider = ({ children }) => {
       };
       const { data } = await axios(options);
 
-      setLyricsData({ artist, song, lyrics: data.lyrics });
+      if (data.lyrics) {
+        setLyricsData({ artist, song, lyrics: data.lyrics });
+        setAlert("");
+      } else {
+        setAlert("Song not found!");
+      }
     } catch (error) {
-      console.log(error);
+      setAlert("Song not found!");
     }
 
     setLoading(false);
