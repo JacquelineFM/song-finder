@@ -5,6 +5,11 @@ const Form = () => {
   const [search, setSearch] = useState({ artist: "", song: "" });
   const { setAlert, searchLyrics } = useLyrics();
 
+  /**
+   * If any of the values in the search object are empty, then set the alert to "All fields are
+   * required!" and return.
+   * @returns The searchLyrics function is being returned.
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
 

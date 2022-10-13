@@ -7,18 +7,16 @@ const Lyrics = () => {
   return loading ? (
     <Spinner />
   ) : (
-    <>
-      <div>
-        <p className="text-emerald-500 text-sm font-medium uppercase">
-          {lyricsData.artist}
-        </p>
-        <p className="text-gray-700 text-xl font-bold uppercase">
-          {lyricsData.song}
-        </p>
-      </div>
+    <div>
+      <p className="text-emerald-500 text-sm font-medium uppercase">
+        {lyricsData.artist}
+      </p>
+      <p className="text-gray-700 text-xl font-bold uppercase">
+        {lyricsData.song}
+      </p>
       <br />
       <div className="whitespace-pre-wrap">{lyricsData.lyrics}</div>
-    </>
+    </div>
   );
 };
 
