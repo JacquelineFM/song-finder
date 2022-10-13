@@ -3,7 +3,7 @@ import useLyrics from "../hooks/useLyrics";
 
 const Form = () => {
   const [search, setSearch] = useState({ artist: "", song: "" });
-  const { setAlert } = useLyrics();
+  const { setAlert, searchLyrics } = useLyrics();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,6 +13,7 @@ const Form = () => {
       return;
     }
 
+    searchLyrics(search);
     setAlert("");
   };
 
@@ -47,7 +48,7 @@ const Form = () => {
             type="text"
             name="song"
             className="rounded-lg border-transparent appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent"
-            placeholder="Celia"
+            placeholder="The first man"
             value={search.song}
             onChange={(e) =>
               setSearch({
